@@ -23,7 +23,7 @@ for line in g:
     if res == 6:
         total += (ord(val[0]) - ord('A') + 1) % 3 + 1
     elif res == 3:
-        total += ord(val[0]) - ord('A') +1
+        total += ord(val[0]) - ord('A') + 1
     else:
         total += (ord(val[0]) - ord('A') - 1) % 3 + 1
 
