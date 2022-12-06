@@ -28,13 +28,18 @@ for string in inStack:
             pStack[int(x / 4)].insert(0, arr[x])
 
 ta = f.readline()
-
+i = 0
 for line in f:
     lArr = list(filter(lambda a: a.isdigit(), line))
     for y in range(0, int(lArr[0])):
-        push(pStack[int(lArr[2])-1], pop(pStack[int(lArr[1])-1]))
-        pStack[int(lArr[1])-1] = (pStack[int(lArr[1])-1])[0:-1]
+        elem = pop(pStack[int(lArr[1])-1])
+        if elem is not None:
+            push(pStack[int(lArr[2]) - 1], elem)
+            if (pStack[int(lArr[2])-1])[-1] is not elem:
+                print("false")
 
+
+print("Day5 first star: ", end="")
 for x in range(0, len(pStack)):
     if pStack[x]:
         print(str((pStack[x])[len(pStack[x])-1]), end="")
