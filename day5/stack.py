@@ -40,18 +40,20 @@ ta = f.readline()
 i = 0
 for line in f:
     lArr = list(filter(lambda a: a.isdigit(), line))
-    if i == 18:
+    if i == 13:
         print("")
     cnt = int(lArr[0])
     orig = pStack[int(lArr[1])-1]
     dest = pStack[int(lArr[2])-1]
     lst = check(pStack, cnt, int(lArr[1])-1, int(lArr[2])-1)
     for y in range(0, cnt):
-        elem = pop(orig)
-        if elem is not None:
-            push(dest, elem)
-            if dest[-1] is not elem:
-                print("false")
+        if orig:
+            elem = orig.pop()
+            if elem is not None:
+                dest.append(elem)
+                if dest[-1] is not elem:
+                    print("false")
+        elem = None
     for l in range(0, len(pStack)):
         if len(pStack[l]) != lst[l]:
             print(str(i))
