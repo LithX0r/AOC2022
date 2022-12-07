@@ -6,3 +6,5 @@ This is the first advent of code i'm participating in. Since the only two langua
 * Day 2 done
 * Day 3 done
 * Day 4 done
+* Day 5 done
+* Day 6 done
